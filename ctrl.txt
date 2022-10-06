@@ -1,0 +1,43 @@
+B 10 1
+B 10 1
+B 50 0.0001
+B 90 1
+B 92 8
+B 93 0.128 5.0
+B 96 9.5 0.0
+B 98 3
+B 99 1
+
+D 10 4
+D 20 2
+D 30 1
+
+F 30 3
+F 40 3
+F 42 1.0
+F 60 0.4
+
+I 12 1
+
+N 40 3
+N 41 40.0
+N 47 0.25
+
+M 10 4
+
+T 10 2
+T 31 0.816
+T 32 0.212
+T 36 2
+
+W 22 -9.81
+
+P 10 1 // turn on .vtu printout
+P 30 0.05 // print out .vtu files interval based on simulation time
+P 51 11.8 0.0025 // x and y coordinate of wave gauge 1 for simulations
+P 51 12.8 0.0025 // x and y coordinate of wave gauge 2 for simulations
+P 51 13.8 0.0025 // x and y coordinate of wave gauge 3 for simulations
+P 51 14.1 0.0025 // x and y coordinate of wave gauge 4 for simulations
+P 52 0.0025 // y-coordinate and print out water surface line (wfsline) in x-direction
+P 53 1 // print out theory in wsfline files
+P 55 0.05 // print out wsfline files interval based
