@@ -1,32 +1,51 @@
-A 10 3
-A 310 3 
-A 311 4 
-A 320 1 
-A 343 0
+A 10 3 // choose the model reef::fnpf
+A 310 3 // 3rd-order runge-kutta for fsfbc time treatment
+A 311 5 // 5th-order weno for fsfbc spatial treatment with wetting an drying
+A 320 1 // 2nd-order laplace
+A 341 5.0 // size of coastal relaxation zone by factor of cell size
+A 343 0 // turn off wetting-drying
+A 350 1 // viscous damping based breaking energy dissipation algorithm
+A 351 1 // shallow water breaking detection
+A 352 0 // no additional
+A 365 0.0025 // artificial viscosity for the breaking dissipation algorithm
 
-B 90 1
-B 92 1
-B 93 0.031000 60.0
-B 96 0 210
-B 98 3
-B 99 2
+B 84 1 // peak enhance spectrum discretisation
+B 85 2 // jonswap wave spectrum
+B 90 1 // wave input
+B 92 31 // 1st-order irregular wave
+B 93 6.4 11.5 // significant wave height and peak period
+B 96 20 20 // wave generation zone length and numerical beach length
+B 98 2 // relaxation method 2 for wave generation
+B 99 1 // relaxation method 1 for numerical beach
 
-F 30 3
-F 40 3
-F 42 0.5000
-F 50 4
-F 60 0.31
+F 60 1.16 // still water depth
 
-I 12 1
+N 41 300 // simulation time
+N 47 1.0 // cfl number
 
-M 10 2
+M 10 4 // number of processors
 
-N 41 250.00
-N 47 0.30
+P 10 1 // turn on .vtu printout
+P 30 0.05 // print out .vtu files interval based on simulation time
 
-P 15 1
-P 30 1.0000
-P 40 2
-P 42 0.5
+P 50 150.0 0.0025 // theory print out of wave guage
+P 51 150.0 0.0025 // numerical print out of wave guage
 
-W 22 -9.81
+P 50 200.0 0.0025 // theory print out of wave guage
+P 51 200.0 0.0025 // numerical print out of wave guage
+
+P 50 300.0 0.0025 // theory print out of wave guage
+P 51 300.0 0.0025 // numerical print out of wave guage
+
+P 50 400.0 0.0025 // theory print out of wave guage
+P 51 400.0 0.0025 // numerical print out of wave guage
+
+P 52 0.0025 // y-coordinate and print out water surface line (wfsline) in x-direction
+P 53 1 // print out theory in wsfline files
+P 55 0.0125 // print out wsfline files interval based on time interval
+
+P 40 1 // print out state files
+P 42 0.0125 // time interval for state file print outs
+P 43 98.6 99.4 0.0 0.5 // state file print out area
+
+W 22 -9.81 // gravity
