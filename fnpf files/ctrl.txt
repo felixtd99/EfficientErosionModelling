@@ -13,12 +13,12 @@ B 84 1 // peak enhance spectrum discretisation
 B 85 2 // jonswap wave spectrum
 B 90 1 // wave input
 B 92 31 // 1st-order irregular wave
-B 93 6.4 11.5 // significant wave height and peak period
+B 93 4.5 11.5 // significant wave height and peak period
 B 96 20 20 // wave generation zone length and numerical beach length
 B 98 2 // relaxation method 2 for wave generation
 B 99 1 // relaxation method 1 for numerical beach
 
-F 60 1.16 // still water depth
+F 60 9.29 // still water depth
 
 N 41 300 // simulation time
 N 47 1.0 // cfl number
