@@ -1,0 +1,80 @@
+B 10 1 // wall funcs for velocities
+B 50 0.0001 // global wall roughness
+
+B 90 1 // turn wave tank on
+B 92 61 // wave coupling for wave input
+B 98 4 // wave gen dirichelet with active absorption
+
+D 10 4 // convection discretisation weno5 flux
+D 20 2 // diffusion discretisation implicit
+D 30 1 // pjm pressure algorithm
+
+F 30 3 // time scheme level set 3rd order tvd rk
+F 40 3 // reinitialisation time scheme 3rd order tvd rk
+F 42 1.0 // length for level set reinitialisation
+F 60 19.44 // water level
+
+I 12 1 // initialise pressure hydrostatic based on vetical value
+
+N 40 3 // time scheme for momentum 3rd order tvd rk
+N 41 300 // time of simulation
+N 47 0.25 // cfl number
+
+M 10 4 // number of procs
+
+T 10 2 // k epsilon turbulence model
+T 31 0.816 // eddy visc limiter for phase 1
+T 32 0.212 // eddy visc limiter for phase 2
+T 36 2 // fsf bc for turbulent dissipation
+
+W 22 -9.81 // gravity
+
+S 10 2 // sediment transport module - porous sediments														
+S 11 1 // bedload transport formula van rijn									
+S 16 3 // bed shear stress formulation - velocity based									
+S 17 1 // inner iterations for topo to get to full sediment timesteps									
+S 37 1000 // number of topo reinitialization time steps									
+S 43 100 // number of water iterations befor sediment transport starts									
+S 20 0.22 // sediment mean diameter
+S 22 2700 // sediment density
+S 24 0.4 // porosity of the sediment layer
+S 25 35 // angle of repose
+S 30 0.047 // shields parameter				
+S 80 1 // type of critical shear stress reduction for sloping bed - parker and kovacs									
+S 90 1 // sandslide algorithm - on									
+S 91 1000 // number of sandslide iterations									
+S 93 30 //delta angle for sandslide correction									
+S 100 1 // number of outer spatial fileter iterations
+
+P 10 1 // turn on .vtu printout
+P 25 1 // print solid to vtu
+P 28 1 // print fb to vtu
+P 27 1 // print topo to vtu file
+P 30 0.05 // print out .vtu files interval based on simulation time
+P 53 1 // print out theory in wsfline files
+P 55 0.05 // print out wsfline files interval based
+P 77 1 // print out bed slop params to vtu
+P 79 1 // print bead shear stress to vtu
+
+P 120  100 // print sediment files every ith iteration
+
+P 121 80.0 0.01 // print bed level guage
+P 121 81.0 0.01 // print bed level guage
+P 121 81.3 0.01 // print bed level guage
+P 121 79.0 0.01 // print bed level guage
+P 121 78.0 0.01 // print bed level guage
+P 121 75.0 0.01 // print bed level guage
+P 121 70.0 0.01 // print bed level guage
+
+P 122 1 // max bed level gauge
+P 123 0.01 // y location of sediment profile in x direction
+
+P 125 80.0 0.01 // print shear stress guage
+P 125 81.0 0.01 // print shear stress guage
+P 125 81.3 0.01 // print shear stress guage
+P 125 79.0 0.01 // print shear stress guage
+P 125 78.0 0.01 // print shear stress guage
+P 125 75.0 0.01 // print shear stress guage
+P 125 70.0 0.01 // print shear stress guage
+
+P 126 1 // print max shear stress

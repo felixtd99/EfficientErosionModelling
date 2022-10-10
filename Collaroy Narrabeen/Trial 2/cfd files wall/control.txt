@@ -1,0 +1,23 @@
+C 11 6 // left side: wave generation
+C 12 3 // side: symmetry plane
+C 13 3 // side: symmetry plane
+C 14 7 // right side: numerical beach
+C 15 21 // bottom: wall boundary
+C 16 3 // top: symmetry plane
+
+B 1 0.1 // horizontal mesh size dx
+B 10 643.0 743.0 0.0 0.1 16.64 24.0 // rectangular domain size
+
+G 10 1 // turn on geodat interp
+G 15 2 // use local inverse distance interp
+G 31 14 // number of smoothing iterations
+
+S 10 189.00 189.5 0.0 0.1 6.49 12.0 // solid as sea wall
+
+M 10 4 // number of processors
+M 20 2 // decomposition method 2
+
+H 10 4 // turn on hdc
+H 21 0.0 // start of domain in x
+H 31 0.0 // start of time coupling
+H 32 300.0 // end of time coupling
